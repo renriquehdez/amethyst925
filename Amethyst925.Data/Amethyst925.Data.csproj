@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Amethyst925.Core\Amethyst925.Core.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -8,4 +8,9 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Amethyst925.Core\Amethyst925.Core.csproj" />
+    <ProjectReference Include="..\Amethyst925.Services\Amethyst925.Services.csproj" />
+  </ItemGroup>
+
 </Project>
