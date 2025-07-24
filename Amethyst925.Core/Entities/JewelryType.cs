@@ -4,38 +4,27 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 /// <summary>
-/// Sucursal
+/// Tipo de Joyería
 /// </summary>
-public class Branch
+public class JewelryType
 {
     /// <summary>
-    /// Código Sucursal
+    /// Código del Tipo de Joyería
     /// </summary>
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.None)]
     public int Id { get; set; }
 
+
     /// <summary>
-    /// Nombre de la Sucursal
+    /// Nombre del Tipo de Joyería
     /// </summary>
     [MaxLength(100)]
     public string Name { get; set; } = string.Empty;
 
     /// <summary>
-    /// Dirección de la Sucursal
+    /// Descripción del Tipo de Joyería
     /// </summary>
     [MaxLength(250)]
-    public string Address { get; set; } = string.Empty;
-
-    /// <summary>
-    /// Teléfono de la Sucursal
-    /// </summary>
-    [MaxLength(50)]
-    public string Phone { get; set; } = string.Empty;
-
-    /// <summary>
-    /// Correo Electrónico
-    /// </summary>
-    [MaxLength(50)]
-    public string Email { get; set; } = string.Empty;
+    public string Description { get; set; } = string.Empty;
 }

@@ -3,6 +3,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+/// <summary>
+/// Tipo de Metal
+/// </summary>
 public class MetalType
 {
     /// <summary>
