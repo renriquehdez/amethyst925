@@ -1,41 +1,40 @@
 ﻿namespace Amethyst925.Core.Entities;
-
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 /// <summary>
-/// Sucursal
+/// Cliente
 /// </summary>
-public class Branch
+public class Customer
 {
     /// <summary>
-    /// Código Sucursal
+    /// Código de Cliente
     /// </summary>
     [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.None)]
-    public int Id { get; set; }
+    [MaxLength(50)]
+    public string Id { get; set; } = string.Empty; // RFC o identificador único
 
     /// <summary>
-    /// Nombre de la Sucursal
+    /// Nombre del Cliente
     /// </summary>
     [MaxLength(100)]
     public string Name { get; set; } = string.Empty;
 
     /// <summary>
-    /// Dirección de la Sucursal
+    /// Dirección del Cliente
     /// </summary>
     [MaxLength(250)]
     public string Address { get; set; } = string.Empty;
 
     /// <summary>
-    /// Teléfono de la Sucursal
+    /// Teléfono del Cliente
     /// </summary>
-    [MaxLength(50)]
+    [MaxLength(20)]
     public string Phone { get; set; } = string.Empty;
 
     /// <summary>
-    /// Correo Electrónico Sucursal
+    /// Çorreo Electrónico del Cliente
     /// </summary>
-    [MaxLength(50)]
+    [EmailAddress]
+    [MaxLength(100)]
     public string Email { get; set; } = string.Empty;
 }
