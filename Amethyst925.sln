@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amethyst925.Data", "Amethys
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amethyst925.Services", "Amethyst925.Services\Amethyst925.Services.csproj", "{EEC9FCFF-22FE-4676-BBD2-1EA82C0A8EFB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amethyst925.Windows", "Amethyst925.Windows\Amethyst925.Windows.csproj", "{A9385BA5-2108-448C-BD18-82048CB5CD86}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{EEC9FCFF-22FE-4676-BBD2-1EA82C0A8EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEC9FCFF-22FE-4676-BBD2-1EA82C0A8EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEC9FCFF-22FE-4676-BBD2-1EA82C0A8EFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9385BA5-2108-448C-BD18-82048CB5CD86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9385BA5-2108-448C-BD18-82048CB5CD86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9385BA5-2108-448C-BD18-82048CB5CD86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9385BA5-2108-448C-BD18-82048CB5CD86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
