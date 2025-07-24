@@ -22,9 +22,9 @@ public class Price
     public decimal Amount { get; set; } // con 2 decimales
 
     /// <summary>
-    /// Fecha Inicio del Precio
+    /// Fecha Efectiva del Precio
     /// </summary>
-    public DateTime InitialDate { get; set; }
+    public DateTime EffectiveDate { get; set; }
 
     /// <summary>
     /// Fecha Expiración
