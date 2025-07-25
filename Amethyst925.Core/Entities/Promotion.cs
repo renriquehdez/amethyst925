@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Amethyst925.Core.Entities;
 
+/// <summary>
+/// Promoción
+/// </summary>
 public class Promotion
 {
     /// <summary>
