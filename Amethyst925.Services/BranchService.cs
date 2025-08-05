@@ -41,7 +41,7 @@ public class BranchService : IBranchService
         return branch;
     }
 
-    public async Task DeleteAsync(int id, string username)
+    public async Task DeleteAsync(int id)
     {
         var branch = await _context.Branches.FindAsync(id);
         if (branch != null)

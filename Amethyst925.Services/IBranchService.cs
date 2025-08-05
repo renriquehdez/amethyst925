@@ -10,5 +10,5 @@ public interface IBranchService
     Task<Branch?> GetByIdAsync(int id);
     Task<Branch> CreateAsync(Branch branch);
     Task<Branch> UpdateAsync(Branch branch);
-    Task DeleteAsync(int id, string username);
+    Task DeleteAsync(int id);
 }
