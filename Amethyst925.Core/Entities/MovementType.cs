@@ -11,7 +11,7 @@ public class MovementType
     /// Código del Tipo de Movimiento
     /// </summary>
     [MaxLength(2)]
-    public char Id { get; set; } // 'E' Entrada, 'S' Salida, etc.
+    public string Id { get; set; } // 'E' Entrada, 'S' Salida, etc.
 
     /// <summary>
     /// Nombre del Tipo de Movimiento
@@ -27,5 +27,6 @@ public class MovementType
     /// <summary>
     /// Signo del Movimiento de Inventario
     /// </summary>
-    public bool InventorySing { get; set; } // + suma, - resta, =  nada
+    [MaxLength(1)]
+    public string InventorySing { get; set; } // + suma, - resta, =  nada
 }
