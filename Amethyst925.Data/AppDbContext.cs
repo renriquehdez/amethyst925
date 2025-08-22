@@ -5,7 +5,11 @@ namespace Amethyst925.Data;
 
 public class AppDbContext : DbContext
 {
-    #region Catálogos
+    #region Constructor
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+    #endregion
+
+    #region DbSets
     public DbSet<Branch> Branches { get; set; }
     public DbSet<MetalType> MetalTypes { get; set; }
     public DbSet<JewelryType> JewelryTypes { get; set; }
@@ -17,12 +21,11 @@ public class AppDbContext : DbContext
     #region Procesos
     public DbSet<Price> Prices { get; set; }
     public DbSet<Promotion> Promotions { get; set; }
+    public DbSet<MovementType> MovementTypes { get; set; }
     public DbSet<InventoryMovement> InventoryMovements { get; set; }
     public DbSet<Invoice> Invoices { get; set; }
     public DbSet<InvoiceDetail> InvoiceDetails { get; set; }
     #endregion
-
-    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -90,7 +93,6 @@ public class AppDbContext : DbContext
             .HasPrecision(18, 2);
         #endregion
 
-        #region Configuración de relaciones y restricciones
         modelBuilder.Entity<InventoryMovement>()
             .HasOne(im => im.Jewelry)
             .WithMany()
@@ -101,16 +103,17 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Branch>().HasData(
             new Branch { Id = 1, Name = "Tacachico", Address = "5 Av. Sur, Plaza Villa Nueva, Local 7" });
 
+        // Datos iniciales
         modelBuilder.Entity<MovementType>().HasData(
-            new MovementType { Id = "E", Name = "Entrada", Description = "Entrada de inventario", InventorySing = '+' },
-            new MovementType { Id = "S", Name = "Salida", Description = "Salida de inventario", InventorySing = '-' },
-            new MovementType { Id = "V", Name = "Venta", Description = "Venta a cliente", InventorySing = '-' },
-            new MovementType { Id = "D", Name = "Donación", Description = "Donación o pérdida", InventorySing = '-' },
-            new MovementType { Id = "AP", Name = "Ajuste Positivo", Description = "Ajuste de inventario a favor", InventorySing = '+' },
-            new MovementType { Id = "AN", Name = "Ajuste Negativo", Description = "Ajuste de inventario en contra", InventorySing = '-' }
+            new MovementType { Id = "10", Name = "Entrada", Description = "Entrada de inventario", InventorySing = "+" },
+            new MovementType { Id = "11", Name = "Ajuste a favor", Description = "Ajuste de inventario", InventorySing = "+" },
+            new MovementType { Id = "20", Name = "Salida", Description = "Salida de inventario", InventorySing = "-" },
+            new MovementType { Id = "21", Name = "Venta", Description = "Venta a cliente", InventorySing = "-" },
+            new MovementType { Id = "22", Name = "Ajuste en contra", Description = "Ajuste de inventario", InventorySing = "-" }
         );
         #endregion
 
         base.OnModelCreating(modelBuilder);
     }
+    #endregion
 }

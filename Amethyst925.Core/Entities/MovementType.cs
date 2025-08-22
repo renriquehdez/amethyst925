@@ -28,5 +28,5 @@ public class MovementType
     /// Signo del Movimiento de Inventario
     /// </summary>
     [MaxLength(1)]
-    public char InventorySing { get; set; } // + suma, - resta, =  nada
+    public string InventorySing { get; set; } // + suma, - resta, =  nada
 }
