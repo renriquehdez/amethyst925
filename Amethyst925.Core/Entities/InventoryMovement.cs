@@ -18,7 +18,7 @@ public class InventoryMovement
     /// Código del Tipo de Movimiento
     /// </summary>
     [MaxLength(2)]
-    public char MovementTypeId { get; set; }
+    public string MovementTypeId { get; set; }
 
     /// <summary>
     /// Código de Joya
