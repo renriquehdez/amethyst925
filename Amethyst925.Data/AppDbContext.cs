@@ -6,6 +6,8 @@ namespace Amethyst925.Data;
 public class AppDbContext : DbContext
 {
     #region Constructor
+    public AppDbContext() { }
+
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
     #endregion
 
@@ -21,11 +23,28 @@ public class AppDbContext : DbContext
     #region Procesos
     public DbSet<Price> Prices { get; set; }
     public DbSet<Promotion> Promotions { get; set; }
-    public DbSet<MovementType> MovementTypes { get; set; }
     public DbSet<InventoryMovement> InventoryMovements { get; set; }
     public DbSet<Invoice> Invoices { get; set; }
     public DbSet<InvoiceDetail> InvoiceDetails { get; set; }
     #endregion
+
+    #region Events
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        string conn = $"Data Source=LS2C-5CD2011ZY4\\SQLEXPRESS22;"
+            + $"Initial Catalog=Amethyst925;"
+            + $"User Id=sa;"
+            + $"Password=fb9tbu%3StLFRJ;"
+            + "MultipleActiveResultSets=true;TrustServerCertificate=True;ConnectRetryCount=0;Connection Timeout=120";
+
+        optionsBuilder
+            .UseLazyLoadingProxies(true)
+            .UseSqlServer(conn);
+        //.UseEnumCheckConstraints();
+
+        base.OnConfiguring(optionsBuilder);
+
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -97,7 +116,6 @@ public class AppDbContext : DbContext
             .HasOne(im => im.Jewelry)
             .WithMany()
             .OnDelete(DeleteBehavior.Restrict);
-        #endregion
 
         #region Datos iniciales
         modelBuilder.Entity<Branch>().HasData(
