@@ -8,7 +8,7 @@ namespace Amethyst925.Windows.Views
     /// <summary>
     /// Interaction logic for BranchViewxaml.xaml
     /// </summary>
-    public partial class BranchView : Window
+    public partial class BranchView : Window, IDisposable
     {
         public BranchView()
         {
@@ -18,5 +18,7 @@ namespace Amethyst925.Windows.Views
             var branchService = ((App)Application.Current).ServiceProvider.GetRequiredService<IBranchService>();
             DataContext = new BranchViewModel(branchService);
         }
+
+        public void Dispose() { }
     }
 }

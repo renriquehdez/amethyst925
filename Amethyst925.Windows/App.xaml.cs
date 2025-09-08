@@ -55,7 +55,7 @@ public partial class App : Application
         }
 
         // Mostrar la ventana principal
-        var mainWindow = ServiceProvider.GetRequiredService<BranchView>();
+        var mainWindow = ServiceProvider.GetRequiredService<MainWindow>();
         mainWindow.Show();
     }
 }
