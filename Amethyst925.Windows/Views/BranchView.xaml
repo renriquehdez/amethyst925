@@ -9,6 +9,7 @@
         Title="Administración de Sucursales"
         Width="800"
         Height="600"
+        WindowStartupLocation="CenterOwner"
         mc:Ignorable="d">
 
     <Grid Margin="16">
@@ -28,6 +29,7 @@
                                      Kind="Store" />
             <TextBlock VerticalAlignment="Center"
                        FontSize="20"
+                       Style="{StaticResource MaterialDesignTitleLargeTextBlock}"
                        Text="Administración de Sucursales" />
         </StackPanel>
 
@@ -73,6 +75,11 @@
                     Command="{Binding DeleteBranchCommand}"
                     Content="Eliminar"
                     IsEnabled="{Binding SelectedBranch, Converter={StaticResource NullToBooleanConverter}}" />
+            <Button x:Name="BtnClose"
+                    Margin="0,0,8,0"
+                    Click="BtnClose_Click"
+                    Content="Cerrar"
+                    Style="{StaticResource MaterialDesignFlatButton}" />
         </StackPanel>
 
         <!--  Edit Form  -->
@@ -109,7 +116,8 @@
                                 Command="{Binding SaveBranchCommand}"
                                 Content="Guardar" />
                         <Button Command="{Binding CancelEditCommand}"
-                                Content="Cancelar" />
+                                Content="Cancelar"
+                                Style="{StaticResource MaterialDesignFlatButton}" />
                     </StackPanel>
                 </StackPanel>
             </Border>

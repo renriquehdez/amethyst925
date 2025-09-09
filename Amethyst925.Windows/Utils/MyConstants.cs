@@ -39,6 +39,7 @@ public static class MyConstants
     public static string MSG_ERROR_UNITS => "Las Unidades deben ser mayor de CERO, favor verificar";
     public static string MSG_QUESTION_CANCEL_WEIGHT => "¿Desea anular el Peso?";
     public static string MSG_QUESTION_CANCEL_LASTREADING => "¿Desea limpiar últimas pesas?";
+    public static string MSG_QUESTION_CANCEL_DELETE => "A L E R T A :\n\n ¿Desea eliminar el registro seleccionado?";
     public static string MSG_QUESTION_USER_PASSWORD_DB => "¿Están correctos la configuración de la Conexión?";
     public static string MSG_RESTART_APP => "Favor verificar Parámetros en las Variables de Entorno del Usuario, validarlos y vuelva a iniciar la Aplicación";
     public static string MSG_ERROR_GETINFO => "Hubo un problema para obtener la información";

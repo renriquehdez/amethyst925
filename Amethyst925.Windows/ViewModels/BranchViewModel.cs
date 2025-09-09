@@ -2,10 +2,11 @@
 
 using Amethyst925.Core.Entities;
 using Amethyst925.Services;
+using Amethyst925.Windows.Utils;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
-
+using System.Windows;
 
 public partial class BranchViewModel : ObservableObject
 {
@@ -79,8 +80,11 @@ public partial class BranchViewModel : ObservableObject
     {
         if (SelectedBranch != null)
         {
-            await _branchService.DeleteAsync(SelectedBranch.Id);
-            LoadBranchesCommand.Execute(null);
+            if (MessageBox.Show(MyConstants.MSG_QUESTION_CANCEL_DELETE, MyConstants.TXT_QUESTION, MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No) == MessageBoxResult.Yes)
+            {
+                await _branchService.DeleteAsync(SelectedBranch.Id);
+                LoadBranchesCommand.Execute(null);
+            }
         }
     }
 }

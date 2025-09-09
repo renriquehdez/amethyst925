@@ -20,5 +20,7 @@ namespace Amethyst925.Windows.Views
         }
 
         public void Dispose() { }
+
+        private void BtnClose_Click(object sender, RoutedEventArgs e) => Close();
     }
 }
