@@ -66,5 +66,5 @@ public class Invoice
     public virtual Branch Branch { get; set; }
 
     // Other Objects
-    public ICollection<InvoiceDetail> Details { get; set; }
+    public virtual ICollection<InvoiceDetail> Details { get; set; }
 }

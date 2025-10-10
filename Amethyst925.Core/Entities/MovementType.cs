@@ -11,7 +11,7 @@ public class MovementType
     /// Código del Tipo de Movimiento
     /// </summary>
     [MaxLength(2)]
-    public string Id { get; set; } // 'E' Entrada, 'S' Salida, etc.
+    public string Id { get; set; }
 
     /// <summary>
     /// Nombre del Tipo de Movimiento

@@ -6,6 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:Amethyst925.Windows.ViewModels"
+<<<<<<< HEAD
         Title="BranchView"
         Width="800"
         Height="450"
@@ -13,6 +14,13 @@
     <Window.DataContext>
         <vm:BranchViewModel />
     </Window.DataContext>
+=======
+        Title="Administración de Sucursales"
+        Width="800"
+        Height="600"
+        WindowStartupLocation="CenterOwner"
+        mc:Ignorable="d">
+>>>>>>> 80c13e6a1ef980734bc9c8aa23c4a695e7f6a197
 
     <Grid Margin="16">
         <Grid.RowDefinitions>
@@ -31,6 +39,10 @@
                                      Kind="Store" />
             <TextBlock VerticalAlignment="Center"
                        FontSize="20"
+<<<<<<< HEAD
+=======
+                       Style="{StaticResource MaterialDesignTitleLargeTextBlock}"
+>>>>>>> 80c13e6a1ef980734bc9c8aa23c4a695e7f6a197
                        Text="Administración de Sucursales" />
         </StackPanel>
 
@@ -67,6 +79,7 @@
                     Orientation="Horizontal">
             <Button Margin="0,0,8,0"
                     Command="{Binding NewBranchCommand}"
+<<<<<<< HEAD
                     Content="Nueva"
                     Style="{StaticResource MaterialDesignRaisedButton}" />
             <Button Margin="0,0,8,0"
@@ -79,6 +92,22 @@
                     Content="Eliminar"
                     IsEnabled="{Binding SelectedBranch, Converter={StaticResource NullToBooleanConverter}}"
                     Style="{StaticResource MaterialDesignRaisedButton}" />
+=======
+                    Content="Nueva" />
+            <Button Margin="0,0,8,0"
+                    Command="{Binding EditBranchCommand}"
+                    Content="Editar"
+                    IsEnabled="{Binding SelectedBranch, Converter={StaticResource NullToBooleanConverter}}" />
+            <Button Margin="0,0,8,0"
+                    Command="{Binding DeleteBranchCommand}"
+                    Content="Eliminar"
+                    IsEnabled="{Binding SelectedBranch, Converter={StaticResource NullToBooleanConverter}}" />
+            <Button x:Name="BtnClose"
+                    Margin="0,0,8,0"
+                    Click="BtnClose_Click"
+                    Content="Cerrar"
+                    Style="{StaticResource MaterialDesignFlatButton}" />
+>>>>>>> 80c13e6a1ef980734bc9c8aa23c4a695e7f6a197
         </StackPanel>
 
         <!--  Edit Form  -->
@@ -113,14 +142,25 @@
                                 Orientation="Horizontal">
                         <Button Margin="0,0,8,0"
                                 Command="{Binding SaveBranchCommand}"
+<<<<<<< HEAD
                                 Content="Guardar"
                                 Style="{StaticResource MaterialDesignRaisedButton}" />
                         <Button Command="{Binding CancelEditCommand}"
                                 Content="Cancelar"
                                 Style="{StaticResource MaterialDesignOutlinedButton}" />
+=======
+                                Content="Guardar" />
+                        <Button Command="{Binding CancelEditCommand}"
+                                Content="Cancelar"
+                                Style="{StaticResource MaterialDesignFlatButton}" />
+>>>>>>> 80c13e6a1ef980734bc9c8aa23c4a695e7f6a197
                     </StackPanel>
                 </StackPanel>
             </Border>
         </Grid>
     </Grid>
+<<<<<<< HEAD
 </Window>
+=======
+</Window>
+>>>>>>> 80c13e6a1ef980734bc9c8aa23c4a695e7f6a197

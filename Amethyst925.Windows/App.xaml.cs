@@ -7,7 +7,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 80c13e6a1ef980734bc9c8aa23c4a695e7f6a197
 /// <summary>
 /// Interaction logic for App.xaml
 /// </summary>
@@ -24,6 +27,7 @@ public partial class App : Application
 
     private void ConfigureServices(IServiceCollection services)
     {
+<<<<<<< HEAD
         services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=Amethyst;Trusted_Connection=True;"));
 
@@ -31,6 +35,21 @@ public partial class App : Application
 
         services.AddTransient<BranchView>(); // Registrar BranchView como servicio transitorio
         services.AddSingleton<MainWindow>();
+=======
+        string conn = $"Data Source=LS2C-5CD2011ZY4\\SQLEXPRESS22;"
+            + $"Initial Catalog=Amethyst925;"
+            + $"User Id=sa;"
+            + $"Password=fb9tbu%3StLFRJ;"
+            + "MultipleActiveResultSets=true;TrustServerCertificate=True;ConnectRetryCount=0;Connection Timeout=120";
+
+        services.AddDbContext<AppDbContext>(options =>
+            options.UseSqlServer(conn));
+
+        services.AddScoped<IBranchService, BranchService>();
+
+        services.AddSingleton<MainWindow>();
+        services.AddTransient<BranchView>();    // Registrar BranchView como servicio transitorio
+>>>>>>> 80c13e6a1ef980734bc9c8aa23c4a695e7f6a197
     }
 
     protected override void OnStartup(StartupEventArgs e)
@@ -38,6 +57,7 @@ public partial class App : Application
         base.OnStartup(e);
 
         // Asegurar que la base de datos esté creada
+<<<<<<< HEAD
         using var scope = ServiceProvider.CreateScope();
         var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
         dbContext.Database.EnsureCreated();
@@ -45,5 +65,21 @@ public partial class App : Application
         // Mostrar la ventana de sucursales (puedes cambiarlo a MainWindow si prefieres)
         var branchView = ServiceProvider.GetRequiredService<BranchView>();
         branchView.Show();
+=======
+        //using var scope = ServiceProvider.CreateScope();
+        //var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+        //dbContext.Database.EnsureCreated();
+        // Migración de la BD
+        using (var scope = ServiceProvider.CreateScope())
+        using (var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>())
+        {
+            dbContext.Database.Migrate();
+            dbContext.Database.EnsureCreated();
+        }
+
+        // Mostrar la ventana principal
+        var mainWindow = ServiceProvider.GetRequiredService<MainWindow>();
+        mainWindow.Show();
+>>>>>>> 80c13e6a1ef980734bc9c8aa23c4a695e7f6a197
     }
 }
