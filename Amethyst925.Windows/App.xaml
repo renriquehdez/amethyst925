@@ -4,27 +4,16 @@
              xmlns:converters="clr-namespace:Amethyst925.Windows.Converters"
              xmlns:local="clr-namespace:Amethyst925.Windows"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-<<<<<<< HEAD
              StartupUri="MainWindow.xaml">
-=======
-             ShutdownMode="OnExplicitShutdown">
->>>>>>> 80c13e6a1ef980734bc9c8aa23c4a695e7f6a197
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary>
                     <ResourceDictionary.MergedDictionaries>
                         <materialDesign:BundledTheme BaseTheme="Light"
-<<<<<<< HEAD
                                                      PrimaryColor="DeepPurple"
                                                      SecondaryColor="Lime" />
                         <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-=======
-                                                     PrimaryColor="Red"
-                                                     SecondaryColor="Lime" />
-                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/Generic.xaml" />
-                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
->>>>>>> 80c13e6a1ef980734bc9c8aa23c4a695e7f6a197
                     </ResourceDictionary.MergedDictionaries>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
