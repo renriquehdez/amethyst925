@@ -27,12 +27,9 @@ public class BranchService : IBranchService
 
     public async Task<Branch> CreateAsync(Branch branch)
     {
-        if (GetByIdAsync(branch.Id) is null)
-            _context.Branches.Add(branch);
-        else
-            _context.Entry(branch).State = EntityState.Modified;
-
+        _context.Branches.Add(branch);
         await _context.SaveChangesAsync();
+
         return branch;
     }
 
