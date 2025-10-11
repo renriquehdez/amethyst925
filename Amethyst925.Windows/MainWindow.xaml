@@ -40,6 +40,12 @@
                                 <MenuItem x:Name="BranchMenuItem"
                                           Click="BranchMenuItem_Click"
                                           Header="_Sucursales" />
+                                <MenuItem x:Name="MetalTypeMenuItem"
+                                          Click="BranchMenuItem_Click"
+                                          Header="_Tipos de Metal" />
+                                <MenuItem x:Name="MovementTypeMenuItem"
+                                          Click="BranchMenuItem_Click"
+                                          Header="T_ipos de Movimiento" />
                             </MenuItem>
                             <MenuItem Header="_Reportes" />
                         </MenuItem>

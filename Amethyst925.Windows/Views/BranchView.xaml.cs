@@ -16,6 +16,8 @@ namespace Amethyst925.Windows.Views
 
             // Obtener el ViewModel a través del contenedor de dependencias
             var branchService = ((App)Application.Current).ServiceProvider.GetRequiredService<IBranchService>();
+
+            Title = "Administración de Sucursales";
             DataContext = new BranchViewModel(branchService);
         }
 

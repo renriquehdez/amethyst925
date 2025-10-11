@@ -11,6 +11,7 @@ using System.Windows;
 public partial class BranchViewModel : ObservableObject
 {
     private readonly IBranchService _branchService;
+    private readonly string _title;
 
     [ObservableProperty]
     private ObservableCollection<Branch> _branches = new();
@@ -23,6 +24,7 @@ public partial class BranchViewModel : ObservableObject
 
     public BranchViewModel(IBranchService branchService)
     {
+        _title = "Administración de Sucursales";
         _branchService = branchService;
         LoadBranchesCommand.Execute(null);
     }
